@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+.env
+teste.py
+classes/__pycache__/
+data/tweets.json
+data/word_frequencies.json
