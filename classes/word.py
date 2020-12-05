@@ -34,6 +34,11 @@ class Word:
             text = re.sub("^\s|\s$", "", text)
             # converter todas as letras para minusculas
             text = text.lower()
+            # remover stpwords
+            with open('data/stopwords.txt', 'r') as file:
+                stopwords = file.readlines()
+            stopwords = [sw.replace('\n','') for sw in stopwords]
+            text = " ".join([i for i in text.split() if not i in stopwords])
 
             self.tweets_pprocessed.append(text)
 
